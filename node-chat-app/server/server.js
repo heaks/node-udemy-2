@@ -1,4 +1,4 @@
-// last lesson 114
+// last lesson 115
 const path = require('path');
 const http = require('http');
 const express = require('express');
@@ -27,7 +27,7 @@ io.on('connection', (socket) => {
   socket.on('createMessage', function(message, callback) {
     console.log('createMessage', message);
     io.emit('newMessage', generateMessage(message.from, message.text));
-    callback('This is from the server');
+    callback();
   });
 
   socket.on('createLocationMessage', (coords) => {
